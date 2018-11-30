@@ -1,0 +1,124 @@
+/* VIA 仿夸克浏览器
+ * name     via-quark-homepage
+ * author   BigLop
+ * version  1.1
+ */
+*{overflow:hidden;margin:0;padding:0;outline:0;user-select:none;-webkit-tap-highlight-color:transparent;}
+*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{height:100%;}
+li,ul{overflow:hidden;list-style:none;text-overflow:ellipsis;white-space:nowrap;}
+a{color:#000;text-decoration:none;}
+body{font-family:Arial,Roboto,'Droid Sans';background: no-repeat fixed;background-size: cover;}
+/* 主页 */
+#main{position:fixed;top:-100%;width:100%;
+   /* top: 50%;
+    transform: translateY(-50%);*/
+}
+#logo{margin:0 auto;width:130px;height:80px;background:no-repeat center;background-size:contain;}
+#edit{margin:22px 30px 0 30px;height:45px;border:1px solid #bbb;border-radius:99px;background-color: rgba(255,255,255,0.1);}
+#book{margin:17px 20px 0 20px;text-align:center;}
+#book>li{float:left;margin:7px 0;width:20%;height:64px;font-size:12px;}
+.imgbook{margin:0 auto 8px auto;width:40px;height:40px;background-position:center;background-size:41px;background-repeat:no-repeat;border-radius: 40px;}
+.delbook{position:absolute;margin-top:-10px;margin-left:20px;width:30px;height:30px;background:url(../img/delete.png) no-repeat center;background-size:19px;animation:scale .2s;}
+/* 背景页面 */
+.addbook-shade,.box,.set-from,.transition{position:fixed;top:0;display:none;width:100%;height:100%;background:#fff;animation:fadeIn .2s;}
+#search-row{position:fixed;bottom:0;width:100%;background:#fff;}
+.addbook-shade{background:rgba(0,0,0,0.5);}
+.set-from{opacity:0;margin-top:40px;}
+/* 添加书签 */
+.addbook-from{width: 100%;bottom: 0;background: #fff;position: fixed;animation:up .2s;padding:0 20px}
+.addbook-title{overflow:hidden;height:50px;line-height:50px;font-size:20px}
+.addbook-input{padding:12px 0;width:100%;border:0;border-bottom:1px solid #E9E7E7;}
+.addbook-input:hover{border-bottom:1px solid #0066CC;}
+#addbook-upload{height: 44px;line-height: 44px;text-align:center;margin:5px 0;}
+#addbook-upload>img{margin:4px;width:36px;float: left;}
+#addbook-upload>div{width: calc(100% - 50px);text-overflow: ellipsis;text-align: right;}
+#addbook-pick{display:none}
+.addbook-btn{padding:10px 0;text-align:right;border-top:1px solid #E9E7E7;}
+.addbook-btn a{padding:8px 15px;color:#3399CC;line-height:36px;}
+.addbook-btn a:active,#addbook-upload:active{background:#eee;}
+/* 搜索页面 */
+.suggestion{overflow:auto;width:100%;
+	max-height: calc(100% - 101px);
+    bottom: 101px;
+    position: absolute;
+}
+.suggestion>li{padding:15px 20px 15px 50px;background:url(../img/su.png) no-repeat center;background-size:15px;background-position-x:20px;animation:down2 .3s;}
+.suggestion>li:active{background-color:#eee;}
+.div-input{border-top:1px solid #eee;display:none;animation:down2 .1s;}
+.s-temp{position:fixed;top:-8pc;}
+.input{float:left;padding:19px 0 19px 20px;width:calc(100% - 100px);border:0;font-size:14px;}
+.back{float:left;display:none;width:40px;height:55px;background:url(../img/delete.png) no-repeat center;background-size:17px;}
+.close{float:right;margin-right:15px;width:40px;text-align:center;line-height:55px;}
+.close:active{color:#00f;}
+.shortcut{padding:0 10px;background:#eee;line-height:25px;display:none;animation:fadeIn .1s;}
+.shortcut *>li{float:left;padding:10px 0;text-align:center;}
+.shortcut *>li:active{background-color:#ddd;}
+.shortcut1,.shortcut2{color:#444;}
+.shortcut1>li{width:25%;}
+.shortcut2>li{width:20%;}
+.shortcut3>li{margin:0 10px;width:25px;height:44px;background-position:center;background-size:20px;background-repeat:no-repeat;}
+.shortcut3>li:first-child{width:auto;font-size:12px;margin: 0;}
+.shortcut3>li:nth-child(2){background-image:url(../img/search_weibo_icon.png);}
+.shortcut3>li:nth-child(3){background-image:url(../img/search_zhihu_icon.png);}
+.shortcut3>li:nth-child(4){background-image:url(../img/search_youku_icon.png);}
+.shortcut3>li:nth-child(5){background-image:url(../img/search_douban_icon.png);}
+.shortcut3>li:nth-child(6){background-image:url(../img/search_weixin_icon.png);}
+/* 设置页面 */
+.set-option-from{overflow:auto;height:calc(100% - 50px);}
+.set-back{position:absolute;top:19px;left:30px;width:12px;height:12px;border-top:2px solid #555;border-left:2px solid #555;transform:rotate(-45deg);}
+.set-logo{padding:12px 0 12px 64px;border-bottom:1px solid #ddd;color:#555;font-weight:600;font-size:20px;}
+.set-option{padding:15px 20px;}
+.set-option:active{background:#eee}
+.set-title{float:left;}
+.set-description{margin-top:25px;color:#666;font-size:13px;}
+.set-select{float:right;margin-top: 11px;}
+.set-switch{float:right;width:16px;height:16px;border:1px solid #ddd;border-radius:99pc;margin-top: 11px;}
+.set-active{background:#0099CC;border:0}
+#set-upload{display:none;}
+/* 横屏自适应 */
+/* 小提示 */
+.tips{margin:20px;box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 0 6px rgba(0,0,0,.04);
+height:40px;z-index:9999;
+background-color:#fff;
+animation: down2 .3s;
+transform:translateY(0);
+pointer-events:none;/*穿透*/
+}
+.tips i{
+	background:#13CE66 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQwcHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMCAwIDQwIDQwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCAzOS4xICgzMTcyMCkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+aWNvbl9zdWNjZXNzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IkVsZW1lbnQtZ3VpZGVsaW5lLXYwLjIuNCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Ik1lc3NhZ2UiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02MC4wMDAwMDAsIC0yMTIuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSLluKblgL7lkJFf5L+h5oGvIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MC4wMDAwMDAsIDIxMi4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJSZWN0YW5nbGUtMiI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Imljb25fc3VjY2VzcyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMiIgZmlsbD0iIzEzQ0U2NiIgeD0iMCIgeT0iMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj48L3JlY3Q+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yNy44MjU1ODE0LDE3LjE0ODQzNTcgTDE5LjAxNzQ0LDI1LjgyODEyMTMgQzE4LjkwMTE2MDksMjUuOTQyNzA4MyAxOC43NjU1MDMzLDI2IDE4LjYxMDQ2NywyNiBDMTguNDU1NDI3LDI2IDE4LjMxOTc2OTMsMjUuOTQyNzA4MyAxOC4yMDM0ODY1LDI1LjgyODEyMTMgTDE4LjAyOTA3MTYsMjUuNjU2MjUgTDEzLjE3NDQxODYsMjAuODQzNzUgQzEzLjA1ODEzOTUsMjAuNzI5MTYzIDEzLDIwLjU5NTQ4MzcgMTMsMjAuNDQyNzA0NyBDMTMsMjAuMjg5OTI5MyAxMy4wNTgxMzk1LDIwLjE1NjI1IDEzLjE3NDQxODYsMjAuMDQxNjY2NyBMMTQuMzY2Mjc3MiwxOC44NjcxODU3IEMxNC40ODI1NiwxOC43NTI2MDIzIDE0LjYxODIxNzcsMTguNjk1MzEwNyAxNC43NzMyNTc3LDE4LjY5NTMxMDcgQzE0LjkyODI5NCwxOC42OTUzMTA3IDE1LjA2Mzk1MTYsMTguNzUyNjAyMyAxNS4xODAyMzA3LDE4Ljg2NzE4NTcgTDE4LjYxMDQ2NywyMi4yNzYwMzggTDI1LjgxOTc2OTMsMTUuMTcxODcxMyBDMjUuOTM2MDQ4NCwxNS4wNTcyODggMjYuMDcxNzA2LDE1IDI2LjIyNjc0MjMsMTUgQzI2LjM4MTc4MjMsMTUgMjYuNTE3NDQsMTUuMDU3Mjg4IDI2LjYzMzcyMjgsMTUuMTcxODcxMyBMMjcuODI1NTgxNCwxNi4zNDYzNTIzIEMyNy45NDE4NjA1LDE2LjQ2MDkzNTcgMjgsMTYuNTk0NjE1IDI4LDE2Ljc0NzM5NCBDMjgsMTYuOTAwMTczIDI3Ljk0MTg2MDUsMTcuMDMzODUyMyAyNy44MjU1ODE0LDE3LjE0ODQzNTcgTDI3LjgyNTU4MTQsMTcuMTQ4NDM1NyBaIiBpZD0iUGF0aCIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+) no-repeat 0 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    line-height: 40px;
+}
+.tips p{
+	margin-left: 50px;
+    font-size: 12px;
+	line-height:40px;
+}
+/* 动画 */
+@keyframes fadeIn{0%{opacity:0;}
+100%{opacity:1;}
+}
+@keyframes fadeOut{0%{opacity:1;}
+100%{opacity:0;}
+}
+@keyframes down{0%{opacity:1;transform:translateY(0);}
+100%{opacity:0;transform:translateY(40px);}
+}
+@keyframes down2{0%{opacity:0;transform:translateY(-20px);}
+100%{opacity:1;transform:translateY(0);}
+}
+@keyframes up{0%{opacity:0;transform:translateY(40px);}
+100%{opacity:1;transform:translateY(0);}
+}
+@keyframes up2{0%{opacity:1;transform:translateY(0);}
+100%{opacity:0;transform:translateY(-40px);}
+}
+@keyframes scale{0%{transform:scale(0);}
+100%{transform:scale(1);}
+}
+@keyframes scale2{0%{transform:scale(1);}
+100%{transform:scale(0);}
+}
