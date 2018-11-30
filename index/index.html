@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#FFF">
+<title>主页</title>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<div id="main"><div id="logo"></div>
+<div id="edit">
+</div>
+<ul id="book"></ul></div>
+<div class="box" id="search">
+	<ul class="suggestion"></ul>
+	<div id="search-row">
+		<div class="div-input">
+			<input class="input" placeholder="搜索"><div class="back"></div><div class="close">取消</div>
+		</div>
+		<div class="shortcut">
+			<ul class="shortcut1"><li>www.</li><li>m.</li><li>wap.</li><li>.org</li></ul>
+			<ul class="shortcut2"><li>.</li><li>/</li><li>.cn</li><li>.com</li><li>.org</li></ul>
+			<ul class="shortcut3"><li><a>快速搜索:</a></li><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+	</div>
+</div>
+<div class="addbook-shade">
+    <div class="addbook-from">
+        <div class="addbook-title">添加书签</div>
+        <div class="addbook-content">
+            <input type="text" class="addbook-input" placeholder="标题">
+            <input type="text" class="addbook-input" placeholder="地址">
+            <div id="addbook-upload"></div>
+            <input type="file" id="addbook-pick">
+        </div>
+        <div class="addbook-btn"><a class="addbook-btn1">取消</a><a class="addbook-btn0">确定</a></div>
+    </div>
+</div>
+<div class="set-from">
+    <div class="set-back"></div>
+    <p class="set-logo">设置</p>
+    <ul class="set-option-from">
+        <li class="set-option">
+            <p class="set-title">搜索引擎</p>
+            <select class="set-select"><option value="via">跟随Via</option><option value="baidu">百度</option><option value="google">谷歌</option><option value="bing">必应</option><option value="sm">神马</option><option value="haosou">360</option><option value="sogou">搜狗</option></select>
+            <p class="set-description">若未使用Via浏览器请设置搜索引擎</p>
+        </li>
+        <li class="set-option">
+            <p class="set-title">设置壁纸</p>
+            <div class="set-upload"></div>
+            <p class="set-description">图片过大会影响加载速度</p>
+        </li>
+		<li class="set-option">
+            <p class="set-title">文字阴影</p>
+            <div class="set-switch"></div>
+			<p class="set-description">主页书签文字阴影</p>
+        </li>
+    </ul>
+    <input type="file" id="set-upload">
+</div>
+<input class="s-temp">
+<div class="transition"></div>
+<script src="./js/jquery.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
