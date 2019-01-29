@@ -17,4 +17,4 @@
 * **Email:** [jiansource@jianos.xyz](mailto:jiansource.xyz)
 * **GitHub:** [Issues](https://github.com/JianSource/JianBrowser/issues)
 
-© Copyright 2018 JianOS. All rights reserved.
+© Copyright 2018-2019 JianOS. All rights reserved.
