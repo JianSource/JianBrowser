@@ -5,7 +5,7 @@
 * Everything starts from the simple, removes a lot of useless functions, and strives to be simple and efficient.
 * Simple and gorgeous with the Material Design style.
 
-## Functions
+## Features
 * Compiling with Lua is much smaller than Java, and the installation package is even less than 2 MB.
 * Using the Webview kernel, loading the web page directly calls the system kernel, which is faster.
 
